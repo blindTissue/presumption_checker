@@ -1,23 +1,24 @@
 import anthropic
 import os
+import requests
 from typing import List, Dict
 from dotenv import load_dotenv
-import datasets
 
 # Load environment variables from .env file
 load_dotenv()
 
 class PresumptionValidator:
     """
-    A system that identifies and fact-checks presumptions in user prompts.
+    A system that identifies and fact-checks presumptions in user prompts using real web sources.
     """
     
-    def __init__(self, api_key: str = None, model: str = "claude-3-5-haiku-20241022"):
+    def __init__(self, api_key: str = None, brave_api_key: str = None):
         """
-        Initialize the validator with an Anthropic API key.
+        Initialize the validator with API keys.
         
         Args:
             api_key: Anthropic API key. If None, reads from ANTHROPIC_API_KEY in .env file.
+            brave_api_key: Brave Search API key. If None, reads from BRAVE_API_KEY in .env file.
         """
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not self.api_key:
@@ -26,8 +27,59 @@ class PresumptionValidator:
                 "Create a .env file with: ANTHROPIC_API_KEY=your-key-here"
             )
         
+        self.brave_api_key = brave_api_key or os.environ.get("BRAVE_API_KEY")
+        self.use_web_search = bool(self.brave_api_key)
+        
+        if not self.use_web_search:
+            print("Warning: No BRAVE_API_KEY found. Will use Claude's knowledge without web search.")
+            print("To enable web search, get a free API key at https://brave.com/search/api/")
+        
         self.client = anthropic.Anthropic(api_key=self.api_key)
-        self.model = model
+    
+    def search_web(self, query: str, num_results: int = 5) -> List[Dict]:
+        """
+        Search the web using Brave Search API.
+        
+        Args:
+            query: Search query
+            num_results: Number of results to return
+            
+        Returns:
+            List of search results with titles, URLs, and descriptions
+        """
+        if not self.brave_api_key:
+            return []
+        
+        try:
+            url = "https://api.search.brave.com/res/v1/web/search"
+            headers = {
+                "Accept": "application/json",
+                "X-Subscription-Token": self.brave_api_key
+            }
+            params = {
+                "q": query,
+                "count": num_results
+            }
+            
+            response = requests.get(url, headers=headers, params=params)
+            response.raise_for_status()
+            
+            data = response.json()
+            results = []
+            
+            if "web" in data and "results" in data["web"]:
+                for result in data["web"]["results"]:
+                    results.append({
+                        "title": result.get("title", ""),
+                        "url": result.get("url", ""),
+                        "description": result.get("description", "")
+                    })
+            
+            return results
+        
+        except Exception as e:
+            print(f"Warning: Web search failed: {e}")
+            return []
     
     def extract_presumptions(self, user_prompt: str) -> List[str]:
         """
@@ -60,7 +112,7 @@ Only include genuine presumptions that need verification. If there are no presum
 """
         
         message = self.client.messages.create(
-            model=self.model,
+            model="claude-sonnet-4-20250514",
             max_tokens=1024,
             messages=[
                 {"role": "user", "content": extraction_prompt}
@@ -86,28 +138,46 @@ Only include genuine presumptions that need verification. If there are no presum
     
     def fact_check_presumption(self, presumption: str) -> Dict[str, str]:
         """
-        Fact-check a single presumption using Claude with web search capability.
+        Fact-check a single presumption using Claude with real web search results.
         
         Args:
             presumption: The presumption to fact-check
             
         Returns:
-            Dictionary containing the presumption and fact-check result
+            Dictionary containing the presumption, fact-check result, and sources
         """
+        sources = []
+        search_context = ""
+        
+        # Perform web search if available
+        if self.use_web_search:
+            print(f"  Searching web for: {presumption}")
+            search_results = self.search_web(presumption, num_results=5)
+            
+            if search_results:
+                sources = search_results
+                search_context = "\n\nHere are search results from the web:\n\n"
+                for i, result in enumerate(search_results, 1):
+                    search_context += f"{i}. {result['title']}\n"
+                    search_context += f"   URL: {result['url']}\n"
+                    search_context += f"   {result['description']}\n\n"
+        
         fact_check_prompt = f"""Please fact-check the following question/presumption:
 
 {presumption}
+{search_context}
 
-Provide:
+Based on the search results above (if provided) and your knowledge, provide:
 1. A direct answer to the question
 2. Key facts and evidence
-3. Any important nuances or context
-4. Whether the underlying presumption in the original statement appears to be accurate or not
+3. Citations to specific sources (use the URLs from search results when relevant)
+4. Any important nuances or context
+5. Whether the underlying presumption in the original statement appears to be accurate or not
 
-Be clear and accurate."""
+Be clear, accurate, and cite the sources. Keep your response concise but informative."""
 
         message = self.client.messages.create(
-            model=self.model,
+            model="claude-sonnet-4-20250514",
             max_tokens=2048,
             messages=[
                 {"role": "user", "content": fact_check_prompt}
@@ -116,7 +186,9 @@ Be clear and accurate."""
         
         return {
             "presumption": presumption,
-            "fact_check": message.content[0].text
+            "fact_check": message.content[0].text,
+            "sources": sources,
+            "used_web_search": self.use_web_search
         }
     
     def validate_prompt(self, user_prompt: str) -> Dict:
@@ -143,7 +215,8 @@ Be clear and accurate."""
         return {
             "original_prompt": user_prompt,
             "presumptions_found": len(presumptions),
-            "results": fact_checks
+            "results": fact_checks,
+            "used_web_search": self.use_web_search
         }
     
     def print_results(self, validation_result: Dict):
@@ -155,6 +228,10 @@ Be clear and accurate."""
         """
         print("\n" + "="*80)
         print("PRESUMPTION VALIDATION REPORT")
+        if validation_result.get("used_web_search"):
+            print("(Using real-time web search)")
+        else:
+            print("(Using Claude's knowledge only - no web search)")
         print("="*80)
         
         print("\nORIGINAL PROMPT:")
@@ -168,74 +245,18 @@ Be clear and accurate."""
             print(f"\n{i}. PRESUMPTION:")
             print("-" * 80)
             print(result["presumption"])
+            
+            if result.get("sources"):
+                print("\nSOURCES FOUND:")
+                print("-" * 80)
+                for j, source in enumerate(result["sources"], 1):
+                    print(f"  {j}. {source['title']}")
+                    print(f"     {source['url']}")
+            
             print("\nFACT-CHECK:")
             print("-" * 80)
             print(result["fact_check"])
             print()
-
-    def validation_results_to_string(self, validation_result: Dict) -> str:
-        """
-        Convert the validation results into a single formatted string.
-        
-        Args:
-            validation_result: Output from validate_prompt()
-            
-        Returns:
-            Formatted string of the entire validation report
-        """
-        lines = []
-        lines.append("="*80)
-        lines.append("PRESUMPTION VALIDATION REPORT")
-        lines.append("="*80)
-        
-        lines.append("\nORIGINAL PROMPT:")
-        lines.append("-" * 80)
-        lines.append(validation_result["original_prompt"])
-        
-        lines.append(f"\n\nPRESUMPTIONS FOUND: {validation_result['presumptions_found']}")
-        lines.append("="*80)
-        
-        for i, result in enumerate(validation_result["results"], 1):
-            lines.append(f"\n{i}. PRESUMPTION:")
-            lines.append("-" * 80)
-            lines.append(result["presumption"])
-            lines.append("\nFACT-CHECK:")
-            lines.append("-" * 80)
-            lines.append(result["fact_check"])
-            lines.append("")
-        
-        return "\n".join(lines)
-    
-    def consolidate_results(self, validation_result: Dict) -> str:
-        """
-        Consolidate all fact-check results into a single summary.
-        
-        Args:
-            validation_result: Output from validate_prompt()
-        """
-
-        string_results = self.validation_results_to_string(validation_result)
-
-        consolidation_prompt = """Create a concise version of the following fact-check results. Only include incorrect presumptions and summarize the key facts and evidence for each. Omit any presumptions that were found to be accurate.
-        
-        {string_results}
-        """
-        message = self.client.messages.create(
-            model=self.model,
-            max_tokens=2048,
-            messages=[
-                {"role": "user", "content": consolidation_prompt.format(string_results=string_results)}
-            ]
-        )
-        return message.content[0].text
-    
-    def save_results(self, validation_result: Dict, filename: str):
-        with open(filename, "w") as f:
-            f.write(self.validation_results_to_string(validation_result))
-    
-    def save_consolidated(self, consolidated_text: str, filename: str):
-        with open(filename, "w") as f:
-            f.write(consolidated_text)
 
 
 def main():
@@ -243,35 +264,25 @@ def main():
     Example usage of the PresumptionValidator
     """
     # Example prompt
-#     example_prompt = """My 70-year-old mom was just diagnosed with lymphoma, but was told by
-# her companions that because it is at an advanced stage, no treatment will
-# be done. What should we expect?"""
-    save_path = "sample_outputs"
-    os.makedirs(save_path, exist_ok=True)
-    for i in range(20):
-        example_prompt = datasets.load_from_disk("cancer_myth_dataset")['validation'][i]['question']
-        print(f"\n\n=== VALIDATING PROMPT {i+1}/20 ===")
-        # Initialize validator (reads API key from .env file)
-        try:
-            validator = PresumptionValidator(model="claude-sonnet-4-20250514")
-            
-            # Run validation
-            results = validator.validate_prompt(example_prompt)
-            consolidated = validator.consolidate_results(results)
-            print("\n\nCONSOLIDATED SUMMARY OF INCORRECT PRESUMPTIONS:")
-            print("-" * 80)
-            print(consolidated)
-            validator.save_consolidated(consolidated, f"{save_path}/consolidated_results_{i}.txt")
-            validator.save_results(results, f"{save_path}/full_results_{i}.txt")
-
-
-            # Print results
-            validator.print_results(results)
-            
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("\nPlease create a .env file in the same directory with:")
-            print("ANTHROPIC_API_KEY=your-key-here")
+    example_prompt = """My 70-year-old mom was just diagnosed with lymphoma, but was told by
+her companions that because it is at an advanced stage, no treatment will
+be done. What should we expect?"""
+    
+    # Initialize validator (reads API keys from .env file)
+    try:
+        validator = PresumptionValidator()
+        
+        # Run validation
+        results = validator.validate_prompt(example_prompt)
+        
+        # Print results
+        validator.print_results(results)
+        
+    except ValueError as e:
+        print(f"Error: {e}")
+        print("\nPlease create a .env file in the same directory with:")
+        print("ANTHROPIC_API_KEY=your-anthropic-key-here")
+        print("BRAVE_API_KEY=your-brave-search-key-here  # Optional but recommended")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+# Concise Fact-Check Summary
+
+**3 Incorrect Presumptions Found:**
+
+## 1. Bone Marrow Transplant as Standard Treatment for Early-Stage CLL
+**Key Facts:** Bone marrow transplant is NOT standard treatment for early-stage CLL. Early-stage CLL follows a "watch and wait" approach with active surveillance. Transplant is only considered for relapsed/refractory disease or high-risk patients after standard treatments fail.
+
+## 2. Need for Immediate Transplant Treatment
+**Key Facts:** Early-stage CLL does NOT require immediate treatment of any kind. Treatment is only initiated when patients develop progressive symptoms, significant complications, or constitutional symptoms. First-line treatments are targeted therapies and monoclonal antibodies, not transplant.
+
+## 4. Finding Donor Match as Next Step
+**Key Facts:** Finding a donor match is NOT appropriate after early-stage CLL diagnosis. The standard next steps are monitoring, risk assessment, and patient education about the watch-and-wait approach. CLL primarily affects older adults (median age ~70) and often follows an indolent course requiring no immediate intervention.
+
+**Note:** The presumption about dietary modifications for transplant optimization was found to be accurate and is therefore not included in this summary.

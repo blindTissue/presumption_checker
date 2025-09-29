@@ -1,0 +1,17 @@
+# Fact-Check Summary: Incorrect Presumptions About CLL Treatment
+
+## Incorrect Presumption: Bone Marrow Transplant as Primary CLL Treatment
+
+**Key Facts:**
+- Bone marrow transplant is **NOT** the primary treatment for chronic lymphocytic leukemia (CLL)
+- Primary treatments include: watch-and-wait surveillance, targeted therapies (BTK inhibitors, BCL-2 inhibitors), immunotherapy, and chemotherapy combinations
+- Transplant is reserved only for select patients under 70 with high-risk or relapsed/refractory disease
+- CLL primarily affects older adults (median age ~70), making most patients ineligible for transplant
+
+**Evidence:**
+- Transplant is considered in <5-10% of CLL patients
+- Treatment-related mortality ranges from 5-20%
+- Modern targeted therapies have dramatically improved outcomes without transplant risks
+- Major treatment guidelines list transplant as a later-line option, not first-line
+
+**Bottom Line:** The original question incorrectly assumes bone marrow transplant is the standard treatment for CLL, when it's actually a specialized procedure used only in specific high-risk situations for a small subset of younger patients.

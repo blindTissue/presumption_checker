@@ -1,0 +1,17 @@
+# Fact-Check Summary: Incorrect Presumptions
+
+## 1. Muscle-invasive bladder cancer requires immediate surgery
+**INCORRECT** - While radical cystectomy is the gold standard, it's not always required immediately:
+- **Alternative treatments exist**: Trimodal therapy (bladder-sparing approach) combining resection, chemotherapy, and radiation is guideline-supported
+- **Timing isn't always immediate**: Neoadjuvant chemotherapy is often given first, delaying surgery by 3-4 months
+- **Treatment should be individualized**: Patient age, comorbidities, tumor characteristics, and preferences all factor into treatment decisions
+- Major guidelines (AUA, EAU, NCCN) recognize both surgical and bladder-preservation approaches as acceptable
+
+## 2. Surgery is the only/primary treatment option for muscle-invasive bladder cancer  
+**INCORRECT** - Multiple established treatment options exist:
+- **Trimodal therapy**: Achieves 5-year survival rates of 50-60%, comparable to surgery in selected patients
+- **Treatment guidelines**: Major medical organizations recognize both surgical and non-surgical approaches as valid options
+- **Patient selection factors**: Age, comorbidities, tumor characteristics, and patient preference regarding quality of life all influence optimal treatment choice
+- **Bladder preservation**: 70-80% of complete responders to trimodal therapy maintain bladder function
+
+*Note: The presumptions about lengthy recovery time and evidence-based recovery acceleration methods were found to be accurate and are therefore omitted from this summary.*

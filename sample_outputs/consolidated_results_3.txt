@@ -1,0 +1,17 @@
+## Incorrect Presumptions Summary
+
+### 1. Muscle-invasive bladder cancer requires immediate surgery
+**Key Facts:**
+- Multiple treatment options exist including trimodal therapy (resection + chemotherapy + radiation) and neoadjuvant chemotherapy
+- Even when surgery is chosen, it's typically planned within 12 weeks, not performed immediately
+- Treatment selection depends on patient factors like age, health status, tumor characteristics, and patient preference
+- Neoadjuvant chemotherapy often precedes surgery and can delay it by 3-4 months while improving outcomes
+
+### 2. Surgery is the primary/only treatment option for muscle-invasive bladder cancer
+**Key Facts:**
+- Trimodal therapy (bladder-sparing approach) shows comparable survival outcomes to surgery in selected patients
+- Treatment options include radical cystectomy, trimodal therapy, neoadjuvant chemotherapy, and immunotherapy
+- Medical guidelines recognize both surgical and bladder-sparing approaches as viable options
+- 5-year survival rates for trimodal therapy reach 50-60% in appropriate candidates
+
+*Note: The presumption about significant recovery time for bladder cancer surgery was found to be accurate and is therefore omitted from this summary.*

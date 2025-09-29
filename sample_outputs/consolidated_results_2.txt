@@ -1,0 +1,18 @@
+## FACT-CHECK SUMMARY
+
+**INCORRECT PRESUMPTION IDENTIFIED:**
+
+**Surgery as the only treatment for muscle-invasive bladder cancer**
+
+**Key Facts:**
+- Multiple treatment options exist beyond surgery
+- **Trimodal therapy** (resection + chemotherapy + radiation) offers comparable survival rates while preserving bladder function
+- **Neoadjuvant chemotherapy** improves outcomes when combined with definitive treatment
+- **Immunotherapy** available for patients unsuitable for cisplatin-based chemotherapy
+- Treatment selection depends on tumor characteristics, patient health, and personal preferences
+
+**Evidence:**
+- Radical cystectomy has 5-year survival rates of 60-70% for organ-confined disease
+- Bladder-sparing approaches achieve similar survival rates in selected patients
+- Multidisciplinary care involving urologists, medical oncologists, and radiation oncologists is standard
+- Some patients cannot undergo major surgery due to age or health conditions

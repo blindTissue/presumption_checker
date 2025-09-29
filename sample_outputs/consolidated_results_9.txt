@@ -1,0 +1,43 @@
+# Fact-Check Summary: Incorrect Presumptions About Stage IV Colorectal Cancer
+
+## 1. Treatment Options Beyond Palliative Care
+**Incorrect presumption:** Palliative care is the only treatment option for stage IV colorectal cancer.
+
+**Key facts:** Multiple active treatments exist including:
+- Systemic chemotherapy (FOLFOX, FOLFIRI combinations)
+- Targeted therapies (bevacizumab, cetuximab for specific tumor types)
+- Immunotherapy for MSI-H tumors
+- Surgical resection of metastases when feasible
+- Local ablative therapies (radiofrequency ablation, SBRT)
+
+Modern oncology integrates palliative care alongside active treatment rather than as an alternative.
+
+## 2. Prognosis and Survival
+**Incorrect presumption:** Stage IV diagnosis means inevitable near-term death.
+
+**Key facts:** 
+- 5-year survival rate is 14-20% overall
+- Median survival now 24-30+ months with modern treatment (vs. 6-12 months decades ago)
+- Some patients achieve long-term survival or cure, especially with resectable metastatic disease
+- Outcomes vary significantly based on metastases location, patient health, and tumor genetics
+
+## 3. Curative Potential
+**Incorrect presumption:** No curative or life-extending treatments are available.
+
+**Key facts:**
+- Surgical resection offers 25-60% five-year survival when metastases can be completely removed
+- Liver metastasectomy: 35-50% five-year survival rates
+- Lung metastasectomy: 40-68% five-year survival rates
+- ~20-25% of stage IV patients may be candidates for potentially curative surgery
+- Median survival improved from ~12 months (1990s) to ~30 months currently
+
+## 4. Scope of Palliative Care
+**Incorrect presumption:** Palliative care only manages pain.
+
+**Key facts:** Comprehensive services include:
+- Management of multiple symptoms (nausea, fatigue, breathing issues)
+- Psychosocial and spiritual support
+- Family counseling and caregiver assistance
+- Care coordination across providers
+- Quality of life and communication support
+- Can be provided alongside curative treatments, not just end-of-life care

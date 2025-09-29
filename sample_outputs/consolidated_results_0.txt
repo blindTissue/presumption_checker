@@ -1,0 +1,17 @@
+# Fact-Check Summary: Incorrect Presumptions About Lymphoma Treatment
+
+## 4 Incorrect Presumptions Identified:
+
+### 1. Advanced-stage lymphoma is untreatable in 70-year-old patients
+**INCORRECT.** Many effective treatments exist including chemotherapy, immunotherapy, targeted therapies, and radiation. Studies show patients over 70 can achieve similar response rates to younger patients, with 5-year survival rates of 40-60% for common types like diffuse large B-cell lymphoma.
+
+### 2. Advanced stage means no treatment options are available
+**INCORRECT.** Stage III and IV lymphomas are often treated with curative intent. Unlike solid tumors, lymphomas frequently remain treatable even when widespread. Hodgkin lymphoma has 80-90% cure rates even in advanced stages, and many aggressive non-Hodgkin lymphomas remain curable.
+
+### 3. Age 70 is too old for lymphoma treatment
+**INCORRECT.** Current medical guidelines don't set age cutoffs. Treatment decisions are based on functional status, comorbidities, and overall health rather than chronological age. Oncologists routinely treat patients in their 70s, 80s, and beyond with modified protocols when appropriate.
+
+### 4. Medical professionals routinely decide against all treatments based solely on stage and age
+**INCORRECT.** Treatment decisions are multifactorial, considering performance status, lymphoma subtype, organ function, patient preferences, and other factors. Modern oncology emphasizes individualized care rather than blanket decisions based on single factors like age or stage.
+
+**Note:** One presumption about palliative care availability was found to be accurate and was omitted per instructions.

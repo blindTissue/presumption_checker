@@ -1,0 +1,17 @@
+# Concise Fact-Check Summary
+
+**Incorrect Presumption Found:**
+
+**Presumption 2: Significance of long-term health effects with one kidney**
+- **Finding**: PARTIALLY ACCURATE - overstates severity
+- **Key Facts**: 
+  - Many people with one kidney live normal, healthy lives with proper care
+  - Increased risks exist but as statistical possibilities, not inevitable outcomes:
+    - 2-3x higher risk of hypertension
+    - 15-25% may develop some kidney function decline
+    - 20-30% may experience protein in urine
+  - The remaining kidney typically compensates by increasing function 70-80%
+  - Life expectancy is generally not significantly reduced
+  - Outcomes vary significantly by cause (donation vs. disease removal vs. congenital)
+
+**Note**: The other 3 presumptions (nephrectomy as standard treatment, ability to live normally with one kidney, and need for ongoing monitoring) were found to be accurate.

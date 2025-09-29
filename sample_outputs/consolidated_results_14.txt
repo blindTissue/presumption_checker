@@ -1,0 +1,11 @@
+# Fact-Check Summary: Incorrect Presumptions
+
+## 1. Does kidney cancer surgery automatically lead to the need for a kidney transplant?
+
+**INCORRECT** - Kidney cancer surgery does NOT automatically require a kidney transplant. Most patients live normally with one kidney after surgery, as a single healthy kidney can perform 75-80% of normal kidney function. Partial nephrectomy often preserves kidney function entirely. Transplants are only needed in rare cases involving pre-existing kidney disease or bilateral kidney involvement.
+
+## 2. Is kidney transplantation a standard or common treatment following kidney cancer surgery?
+
+**INCORRECT** - Kidney transplantation is NOT standard or common after kidney cancer surgery. The primary treatment is surgical tumor removal, and humans function well with one healthy kidney. Additionally, transplant recipients require immunosuppressive medications that actually increase cancer risk, making transplantation counterproductive for most cancer patients.
+
+*Note: 3 presumptions were found to be accurate and are omitted from this summary.*

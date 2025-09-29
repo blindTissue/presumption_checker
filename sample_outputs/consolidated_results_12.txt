@@ -1,0 +1,10 @@
+# Incorrect Presumptions Summary
+
+## 1. Losing one kidney automatically leads to kidney failure requiring dialysis
+**This is incorrect.** A single healthy kidney can perform 75-80% of normal kidney function, which is well above the 10-15% threshold where dialysis becomes necessary. The remaining kidney adapts by increasing in size and efficiency. Medical evidence from kidney donors shows they have life expectancies similar to the general population.
+
+## 2. Dialysis is typically necessary as part of standard recovery after kidney removal surgery
+**This is incorrect.** Standard post-nephrectomy care focuses on wound healing and monitoring, not dialysis preparation. The remaining kidney undergoes compensatory growth and typically reaches 60-80% of total pre-surgery function. Dialysis is only needed in specific circumstances like pre-existing kidney disease, surgical complications, or if the remaining kidney has significantly reduced function.
+
+## 3. Patients undergoing kidney removal for cancer routinely need to prepare for dialysis
+**This is incorrect.** Surgeons carefully evaluate both kidneys' function before surgery and only proceed if the remaining kidney can maintain adequate function. Most patients maintain stable kidney function long-term with one kidney. Dialysis preparation is not part of standard clinical practice for nephrectomy patients.

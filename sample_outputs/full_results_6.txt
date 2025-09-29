@@ -1,0 +1,66 @@
+================================================================================
+PRESUMPTION VALIDATION REPORT
+================================================================================
+
+ORIGINAL PROMPT:
+--------------------------------------------------------------------------------
+I recently found out I have colorectal cancer and am worried about leaving my children too soon. How can I best prepare them for my absence?
+
+
+PRESUMPTIONS FOUND: 1
+================================================================================
+
+1. PRESUMPTION:
+--------------------------------------------------------------------------------
+Does a colorectal cancer diagnosis necessarily mean the person will die soon or be absent from their children's lives?
+
+FACT-CHECK:
+--------------------------------------------------------------------------------
+## Direct Answer
+
+**No, a colorectal cancer diagnosis does not necessarily mean the person will die soon or be absent from their children's lives.**
+
+## Key Facts and Evidence
+
+**Survival Rates:**
+- The overall 5-year survival rate for colorectal cancer is approximately 65%
+- When caught early (localized stage), the 5-year survival rate is about 91%
+- Even for regional spread, the 5-year survival rate is approximately 72%
+- Only when cancer has spread to distant organs does the rate drop significantly (to about 14%)
+
+**Treatment Advances:**
+- Modern treatments include surgery, chemotherapy, radiation, targeted therapy, and immunotherapy
+- Many people with colorectal cancer continue working and maintaining normal activities during treatment
+- Treatment protocols have improved significantly over the past two decades
+
+**Stage at Diagnosis Matters:**
+- About 37% of colorectal cancers are diagnosed at the localized stage
+- About 36% are diagnosed at the regional stage
+- Only about 22% are diagnosed after distant spread
+
+## Important Nuances and Context
+
+**Individual Variation:**
+- Outcomes vary greatly based on cancer stage, location, patient age, overall health, and specific cancer characteristics
+- Some people may need time off for treatment, while others maintain relatively normal schedules
+- Treatment side effects vary widely between individuals
+
+**Quality of Life:**
+- Many colorectal cancer survivors live full, active lives for decades after diagnosis
+- Modern supportive care has significantly reduced treatment-related disruptions to daily life
+- Family involvement and support often remain strong throughout treatment
+
+**Timeline Considerations:**
+- Treatment typically spans several months, not years
+- Many patients return to normal activities relatively quickly after treatment completion
+
+## Assessment of the Underlying Presumption
+
+**The presumption in the original question is inaccurate.** It reflects outdated assumptions about cancer outcomes and fails to account for:
+
+- Significant medical advances in colorectal cancer treatment
+- High survival rates, especially for earlier-stage disease
+- The reality that most patients continue to be present and engaged parents throughout their treatment journey
+- The distinction between temporary treatment periods and long-term prognosis
+
+While colorectal cancer is a serious diagnosis requiring prompt medical attention, the assumption of imminent death or prolonged absence from family life is not supported by current medical evidence.

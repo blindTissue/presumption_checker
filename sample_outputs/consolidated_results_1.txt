@@ -1,0 +1,16 @@
+# Fact-Check Summary: Incorrect Presumptions
+
+## Presumption Found to be Inaccurate:
+
+**"Are there established timelines for when chemotherapy-related pain typically resolves?"**
+
+**Key Facts:**
+- No universally established timelines exist for chemotherapy-related pain resolution
+- Recovery varies significantly based on pain type, specific drugs used, and individual patient factors
+- Research shows 30-40% of patients still experience neuropathy 6+ months post-treatment, with 25% at 12 months
+- Some cases may be permanent, particularly with peripheral neuropathy
+- Healthcare providers discuss probability ranges rather than specific timelines
+
+**Evidence:** Multiple studies demonstrate wide variability in recovery patterns, with factors like age, baseline health, genetic makeup, and cumulative drug dose all influencing outcomes. Different chemotherapy agents also have distinct pain profiles and recovery patterns.
+
+*Note: The other three presumptions (chemotherapy can cause knee pain, pain can persist 5+ years, and knee pain occurs with breast cancer treatments) were found to be accurate based on medical literature.*

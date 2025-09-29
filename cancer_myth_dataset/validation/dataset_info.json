@@ -1,0 +1,66 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "cancer-myth",
+  "dataset_size": 484644,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Cancer-Myth/Cancer-Myth@ab7af9c7dfee7b91ece030f20449c2caf3aeb74a/cancer-myth/validation-00000-of-00001.parquet": {
+      "num_bytes": 199951,
+      "checksum": null
+    }
+  },
+  "download_size": 199951,
+  "features": {
+    "QID": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "presupposition_correction": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "from_model": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "cancer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source_myth": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 684595,
+  "splits": {
+    "validation": {
+      "name": "validation",
+      "num_bytes": 484644,
+      "num_examples": 585,
+      "dataset_name": "cancer-myth"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
