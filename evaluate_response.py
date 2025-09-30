@@ -3,7 +3,7 @@ import os
 import datasets
 from dotenv import load_dotenv
 import json
-def evaluate_results(consolidated_result, information, question, client, model):
+def evaluate_results(consolidated_result: str, information: str, question: str, client: anthropic.Anthropic, model: str) -> str:
     prompt = f""" You are provided with a medical patient question containing some false presupppositions. Evaluate the following presupposition detection results
 Please evaluate the answer with the following criteria:
 

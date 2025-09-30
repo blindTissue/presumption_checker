@@ -4,26 +4,16 @@ from typing import List, Dict
 from dotenv import load_dotenv
 import datasets
 
-# Load environment variables from .env file
 load_dotenv()
 
 class PresumptionValidator:
-    """
-    A system that identifies and fact-checks presumptions in user prompts.
-    """
     
     def __init__(self, api_key: str = None, model: str = "claude-3-5-haiku-20241022"):
-        """
-        Initialize the validator with an Anthropic API key.
-        
-        Args:
-            api_key: Anthropic API key. If None, reads from ANTHROPIC_API_KEY in .env file.
-        """
+
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError(
                 "API key must be provided or set in .env file.\n"
-                "Create a .env file with: ANTHROPIC_API_KEY=your-key-here"
             )
         
         self.client = anthropic.Anthropic(api_key=self.api_key)
@@ -270,8 +260,6 @@ def main():
             
         except ValueError as e:
             print(f"Error: {e}")
-            print("\nPlease create a .env file in the same directory with:")
-            print("ANTHROPIC_API_KEY=your-key-here")
 
 
 if __name__ == "__main__":
