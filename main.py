@@ -246,14 +246,14 @@ def main():
 #     example_prompt = """My 70-year-old mom was just diagnosed with lymphoma, but was told by
 # her companions that because it is at an advanced stage, no treatment will
 # be done. What should we expect?"""
-    save_path = "sample_outputs"
+    save_path = "sample_outputs/claude_3.5_haiku"
     os.makedirs(save_path, exist_ok=True)
     for i in range(20):
         example_prompt = datasets.load_from_disk("cancer_myth_dataset")['validation'][i]['question']
         print(f"\n\n=== VALIDATING PROMPT {i+1}/20 ===")
         # Initialize validator (reads API key from .env file)
         try:
-            validator = PresumptionValidator(model="claude-sonnet-4-20250514")
+            validator = PresumptionValidator(model="claude-3-5-haiku-20241022")
             
             # Run validation
             results = validator.validate_prompt(example_prompt)

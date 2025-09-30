@@ -46,16 +46,17 @@ if __name__ == "__main__":
     load_dotenv()
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     client = anthropic.Anthropic(api_key=api_key)
+    model = "claude-3-5-haiku-20241022"
 
-    items = prepare_evaluation("cancer_myth_dataset", "sample_outputs", 20)
+    items = prepare_evaluation("cancer_myth_dataset", f"sample_outputs/claude_3.5_haiku", 20)
     results = []
     for i, item in enumerate(items):
         print(f"Evaluating on item {i}")
-        out = evaluate_results(item['consolidated_result'], item['presupposition_correction'], item['question'], client, "claude-sonnet-4-20250514")
+        out = evaluate_results(item['consolidated_result'], item['presupposition_correction'], item['question'], client, model)
         results.append(out)
-    
+
     os.makedirs("evaluation_result", exist_ok=True)
-    with open(os.path.join("evaluation_result", "eval_save.json"), "w") as f:
+    with open(os.path.join("evaluation_result", f"{model}.json"), "w") as f:
         json.dump(results, f, indent=4)
         
 
