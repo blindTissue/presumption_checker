@@ -4,11 +4,10 @@
 
 [Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](https://arxiv.org/pdf/2504.11373) showed that LLMs, when prompted with questions which have false medical presuppositions, does not readily detect these presuppositions. There are there are two possible points of failure.
 
-1. LLM does not understand the false medical presupposition.
+1. LLM does not know about the false medical presupposition.
 2. LLM blindly follows user input, sign of sycophancy.
 
-If the problem is (1), it shows that LLMs lack medical knowledge. With (2), it shows sycophancy. This repo does a quick check.
-
+Problem (1) would indicate that LLMs lack medical knowledge, while problem (2) would suggest sycophancy. 
 
 ### Experiment
 
@@ -30,7 +29,14 @@ Tested with Anthropic's Claude 4 Sonnet, and 3.5 Haiku models.
 
 ### Results
 
-On the first 20 questions, Both LLMs almost always found the correct response. On the scoring rubric of [-1, 0, 1] (Provided in the paper), Claude 3.5 scored 1 on every question, while Claude 4 had 17 scores of 1, 2 scores of 0, and one score of -1. This suggests that LLMs have knowledge of the wrong medical presupposition but is sycophantic to user query.
+On the first 20 questions, Both LLMs almost always found the correct response. Using the scoring rubric of [-1, 0, 1] (Provided in the paper), we have
+
+| Model             | +1 | 0  | -1 |
+|-------------------|----|----|----|
+| Claude 3.5 Haiku  | 20 |  0 |  0 |
+| Claude 4          | 17 |  2 |  1 |
+
+Outputs and evaluations can be found in the `sample_outputs`, `evaluation_result` directory.
 
 ### Limitations
 
